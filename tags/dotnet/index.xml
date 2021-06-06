@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dotNet on Berk Aydaşgil</title>
+    <link>https://www.berkaydasgil.com/tags/dotnet/</link>
+    <description>Recent content in dotNet on Berk Aydaşgil</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Berk Aydaşgil</copyright>
+    <lastBuildDate>Sat, 29 May 2021 19:40:16 +0200</lastBuildDate><atom:link href="https://www.berkaydasgil.com/tags/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Future plans for the blog</title>
+      <link>https://www.berkaydasgil.com/posts/first_post/</link>
+      <pubDate>Sat, 29 May 2021 19:40:16 +0200</pubDate>
+      
+      <guid>https://www.berkaydasgil.com/posts/first_post/</guid>
+      <description>Plans Some plans for the blog are:
+  Data visualizations. Would mostly be related to AI applications. I have a fleeting interest in other topics. As I am mostly working on AI those kinds of posts are more likely.
+  Deep learning related posts on image and natural language. Performance scaling, benchmarking, creating services are my area of expertise. Systems topics are also in the ballpark.
+  My experience with JAM stack and running this static Hugo blog.</description>
+    </item>
+    
+  </channel>
+</rss>
