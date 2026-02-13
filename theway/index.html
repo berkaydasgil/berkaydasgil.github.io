@@ -5,44 +5,39 @@
   <title>The Way</title>
   <meta name="robots" content="noindex,nofollow">
   <style>
-  /* Remove default appearance */
+
   input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     width: 200px;
     height: 6px;
-    background: #555; /* gray track */
+    background: #555; 
     border-radius: 5px;
     outline: none;
   }
 
-  /* Track (Chrome, Safari, Edge) */
   input[type="range"]::-webkit-slider-runnable-track {
     height: 6px;
     background: #555;
     border-radius: 5px;
   }
 
-  /* Thumb (Chrome, Safari, Edge) */
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 16px;
     height: 16px;
-    background: #ccc; /* light gray thumb */
+    background: #ccc;
     border-radius: 50%;
     cursor: pointer;
-    margin-top: -5px; /* center thumb vertically */
+    margin-top: -5px; 
   }
 
-  /* Firefox track */
   input[type="range"]::-moz-range-track {
     height: 6px;
     background: #555;
     border-radius: 5px;
   }
-
-  /* Firefox thumb */
   input[type="range"]::-moz-range-thumb {
     width: 16px;
     height: 16px;
@@ -66,7 +61,6 @@
 
   <p id="status" style="margin-top:20px;color:#aaa;">Loading audio...</p>
 
-  <!-- Volume Slider -->
   <div style="margin-top:20px;">
     <input type="range"
            id="volumeSlider"
@@ -92,10 +86,8 @@
     const status = document.getElementById("status");
     const volumeSlider = document.getElementById("volumeSlider");
 
-    // Set initial volume
     audio.volume = volumeSlider.value;
 
-    // Volume control
     volumeSlider.addEventListener("input", () => {
       audio.volume = volumeSlider.value;
     });
@@ -143,3 +135,4 @@
 
 </body>
 </html>
+
