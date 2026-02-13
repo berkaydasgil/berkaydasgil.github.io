@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>The Way</title>
+  <!-- Hide from search engines -->
+  <meta name="robots" content="noindex,nofollow">
+</head>
+<body style="background:#111;color:white;text-align:center;padding-top:100px;font-family:sans-serif;">
+
+  <h1>Egypt Central – The Way</h1>
+
+  <!-- Image -->
+  <div style="margin-top:30px;">
+    <img src="bigfin_squid.jpg"
+         style="max-width:400px;width:80%;display:block;margin:0 auto;border-radius:10px;"
+         onerror="this.style.display='none'; alert('Image not found: bigfin_squid.jpg');">
+  </div>
+
+  <!-- Status -->
+  <p id="status" style="margin-top:20px;color:#aaa;">Loading audio...</p>
+
+  <!-- Play / Pause Button -->
+  <div style="margin-top:40px;">
+    <button id="playPauseBtn"
+            disabled
+            style="padding:15px 40px;font-size:18px;border:none;border-radius:8px;cursor:pointer;">
+      Play
+    </button>
+  </div>
+
+  <script>
+    let audio = new Audio();
+    let isPlaying = false;
+    const button = document.getElementById("playPauseBtn");
+    const status = document.getElementById("status");
+
+    fetch("the-way.txt")
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to load the-way.txt");
+        return response.text();
+      })
+      .then(base64Data => {
+        const binaryString = atob(base64Data.trim());
+        const len = binaryString.length;
+        const bytes = new Uint8Array(len);
+
+        for (let i = 0; i < len; i++) {
+          bytes[i] = binaryString.charCodeAt(i);
+        }
+
+        const blob = new Blob([bytes], { type: "audio/mpeg" });
+        const blobUrl = URL.createObjectURL(blob);
+
+        audio.src = blobUrl;
+        audio.loop = true;
+
+        status.textContent = "Audio ready.";
+        button.disabled = false;
+      })
+      .catch(err => {
+        console.error(err);
+        status.textContent = "Error loading audio. Check console (F12).";
+      });
+
+    button.addEventListener("click", () => {
+      if (!isPlaying) {
+        audio.play();
+        button.textContent = "Pause";
+        isPlaying = true;
+      } else {
+        audio.pause();
+        button.textContent = "Play";
+        isPlaying = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
