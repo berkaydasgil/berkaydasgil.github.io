@@ -4,6 +4,55 @@
   <meta charset="UTF-8">
   <title>The Way</title>
   <meta name="robots" content="noindex,nofollow">
+  <style>
+  /* Remove default appearance */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 200px;
+    height: 6px;
+    background: #555; /* gray track */
+    border-radius: 5px;
+    outline: none;
+  }
+
+  /* Track (Chrome, Safari, Edge) */
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
+    background: #555;
+    border-radius: 5px;
+  }
+
+  /* Thumb (Chrome, Safari, Edge) */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #ccc; /* light gray thumb */
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -5px; /* center thumb vertically */
+  }
+
+  /* Firefox track */
+  input[type="range"]::-moz-range-track {
+    height: 6px;
+    background: #555;
+    border-radius: 5px;
+  }
+
+  /* Firefox thumb */
+  input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #ccc;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+</style>
+
 </head>
 <body style="background:#111;color:white;text-align:center;padding-top:100px;font-family:sans-serif; user-select: none; cursor: default;">
 
@@ -16,6 +65,17 @@
   </div>
 
   <p id="status" style="margin-top:20px;color:#aaa;">Loading audio...</p>
+
+  <!-- Volume Slider -->
+  <div style="margin-top:20px;">
+    <input type="range"
+           id="volumeSlider"
+           min="0"
+           max="1"
+           step="0.01"
+           value="1"
+           style="width:200px;">
+  </div>
 
   <div style="margin-top:40px;">
     <button id="playPauseBtn"
@@ -30,6 +90,15 @@
     let isPlaying = false;
     const button = document.getElementById("playPauseBtn");
     const status = document.getElementById("status");
+    const volumeSlider = document.getElementById("volumeSlider");
+
+    // Set initial volume
+    audio.volume = volumeSlider.value;
+
+    // Volume control
+    volumeSlider.addEventListener("input", () => {
+      audio.volume = volumeSlider.value;
+    });
 
     fetch("the-way.txt")
       .then(response => {
@@ -74,5 +143,3 @@
 
 </body>
 </html>
-
-
