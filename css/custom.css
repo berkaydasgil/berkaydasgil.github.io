@@ -1,0 +1,223 @@
+/* ============================================================
+   Custom overrides for berkaydasgil.com
+   - Oswald font (Google Fonts)
+   - Dark mode via [data-theme="dark"] on <html>
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* ── Oswald: base / body ─────────────────────────────────── */
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.03em;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+#header h1,
+#header .h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#header #nav {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+body h1, body .h1 { font-family: 'Oswald', sans-serif; font-weight: 500; letter-spacing: 0.05em; }
+body h2, body .h2 { font-family: 'Oswald', sans-serif; font-weight: 400; letter-spacing: 0.04em; }
+body h3, body h4, body h5, body h6 { font-family: 'Oswald', sans-serif; font-weight: 300; letter-spacing: 0.03em; }
+
+.post-item-meta, .post-date, .post-tags, .tags a, footer, #footer {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.05em;
+}
+
+code, pre, kbd, samp {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+}
+
+/* ── Dark mode toggle button ─────────────────────────────── */
+#dark-mode-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  background: none;
+  border: 1.5px solid #22272a;
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #22272a;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  padding: 0;
+  line-height: 1;
+}
+#dark-mode-toggle:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+/* ── Dark mode: body & html ──────────────────────────────── */
+html[data-theme="dark"] {
+  border-top-color: #c9cacc !important;
+}
+html[data-theme="dark"] body {
+  background-color: #1d1f21 !important;
+  color: #c9cacc !important;
+}
+
+/* content links */
+html[data-theme="dark"] .content a {
+  color: #c9cacc !important;
+  background-image: linear-gradient(transparent, transparent 5px, #c9cacc 5px, #c9cacc) !important;
+}
+html[data-theme="dark"] .content a:hover {
+  background-image: linear-gradient(transparent, transparent 4px, #d480aa 4px, #d480aa) !important;
+}
+html[data-theme="dark"] .content a.icon:hover { color: #d480aa !important; }
+html[data-theme="dark"] .content h1 a,
+html[data-theme="dark"] .content h2 a,
+html[data-theme="dark"] .content h3 a,
+html[data-theme="dark"] .content h4 a,
+html[data-theme="dark"] .content h5 a,
+html[data-theme="dark"] .content h6 a {
+  background: none !important;
+  color: inherit !important;
+}
+
+/* headings */
+html[data-theme="dark"] body h1,
+html[data-theme="dark"] body .h1 { color: #2bbc8a !important; }
+html[data-theme="dark"] body h2,
+html[data-theme="dark"] body .h2,
+html[data-theme="dark"] body h3 { color: #eee !important; }
+html[data-theme="dark"] body h4,
+html[data-theme="dark"] body h5,
+html[data-theme="dark"] body h6 { color: #ccc !important; }
+html[data-theme="dark"] body hr { border-color: #666 !important; }
+html[data-theme="dark"] body th { color: #eee !important; }
+
+/* header */
+html[data-theme="dark"] #header h1,
+html[data-theme="dark"] #header .h1 { color: #c9cacc !important; }
+html[data-theme="dark"] #header #nav { color: #2bbc8a !important; }
+html[data-theme="dark"] #header #nav ul a { color: #2bbc8a !important; }
+html[data-theme="dark"] #header #nav ul a:hover {
+  background-image: linear-gradient(transparent, transparent 5px, #2bbc8a 5px, #2bbc8a) !important;
+}
+html[data-theme="dark"] #header #nav ul li { border-color: #2bbc8a !important; }
+
+/* post-level header nav */
+html[data-theme="dark"] #header-post #menu-icon:hover,
+html[data-theme="dark"] #header-post #menu-icon-tablet:hover,
+html[data-theme="dark"] #header-post #top-icon-tablet:hover,
+html[data-theme="dark"] #header-post .active,
+html[data-theme="dark"] #header-post #nav,
+html[data-theme="dark"] #header-post #nav ul a { color: #2bbc8a !important; }
+html[data-theme="dark"] #header-post #nav ul li { border-right-color: #2bbc8a !important; }
+html[data-theme="dark"] #header-post a.icon:hover { color: #d480aa !important; }
+
+/* code */
+html[data-theme="dark"] code {
+  background: #2d2d2d !important;
+  color: #c9cacc !important;
+  border-color: #444 !important;
+}
+html[data-theme="dark"] pre {
+  border-top-color: #666 !important;
+  background: #2d2d2d !important;
+}
+html[data-theme="dark"] pre code { background: none !important; }
+
+/* blockquote */
+html[data-theme="dark"] blockquote {
+  border-left-color: #2bbc8a !important;
+  color: #999 !important;
+}
+
+/* footer */
+html[data-theme="dark"] #footer,
+html[data-theme="dark"] footer { color: #666 !important; }
+html[data-theme="dark"] #footer a,
+html[data-theme="dark"] footer a { color: #2bbc8a !important; }
+
+/* tags */
+html[data-theme="dark"] .tag a,
+html[data-theme="dark"] .tags a { color: #c9cacc !important; border-color: #666 !important; }
+html[data-theme="dark"] .tag a:hover,
+html[data-theme="dark"] .tags a:hover { background-color: #2d2d2d !important; }
+
+/* search input */
+html[data-theme="dark"] #search-input {
+  border-color: #444 !important;
+  background-color: #1d1f21 !important;
+  color: #c9cacc !important;
+}
+
+/* table */
+html[data-theme="dark"] body table { border-color: #444 !important; }
+html[data-theme="dark"] body td { border-bottom-color: #444 !important; }
+
+/* toggle button style in dark mode */
+html[data-theme="dark"] #dark-mode-toggle {
+  border-color: #c9cacc;
+  color: #c9cacc;
+}
+html[data-theme="dark"] #dark-mode-toggle:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* ── Bug fixes ───────────────────────────────────────────── */
+
+/* Fix 1: nav links have a background-image underline from .content a
+   which shows as a light stripe in dark mode. Strip it on the header nav. */
+html[data-theme="dark"] #header #nav ul a {
+  background-image: none !important;
+  background: none !important;
+  color: #2bbc8a !important;
+}
+html[data-theme="dark"] #header #nav ul a:hover {
+  background-image: linear-gradient(transparent, transparent 5px, #2bbc8a 5px, #2bbc8a) !important;
+  background-position: bottom !important;
+  background-size: 100% 6px !important;
+  background-repeat: repeat-x !important;
+}
+
+/* Fix 2: social/icon links — .content a.icon has background:none but
+   color inherits from body which the dark override doesn't reach cleanly.
+   Force icon color explicitly. */
+html[data-theme="dark"] .content a.icon,
+html[data-theme="dark"] a.icon {
+  background: none !important;
+  background-image: none !important;
+  color: #c9cacc !important;
+}
+html[data-theme="dark"] .content a.icon:hover,
+html[data-theme="dark"] a.icon:hover {
+  color: #2bbc8a !important;
+  background: none !important;
+}
+
+/* Fix 3: feather SVG icons inside .icon links — fill/stroke inherit from color */
+html[data-theme="dark"] a.icon svg {
+  stroke: #c9cacc;
+  fill: none;
+}
+html[data-theme="dark"] a.icon:hover svg {
+  stroke: #2bbc8a;
+}
