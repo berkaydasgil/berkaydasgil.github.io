@@ -8,12 +8,5 @@
     <language>en-us</language>
     <copyright>Berk Aydaşgil</copyright>
     <atom:link href="https://www.berkaydasgil.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>CV</title>
-      <link>https://www.berkaydasgil.com/Berk_Aydasgil_CV/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.berkaydasgil.com/Berk_Aydasgil_CV/</guid>
-      <description> </description>
-    </item>
   </channel>
 </rss>
